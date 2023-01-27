@@ -20,8 +20,6 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests.LogDisplay
         [Fact]
         public async Task ShouldDisplayAllLogTypesWithDifferentColors_WhenSetupCorrectly()
         {
-            var position = new { Latitude = 25, Longitude = 134 };
-
             var stopWatch = new Stopwatch();
             stopWatch.Start();
             var rnd = new Random();

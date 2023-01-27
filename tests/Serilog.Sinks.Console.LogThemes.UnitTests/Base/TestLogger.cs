@@ -28,15 +28,31 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
                 .CreateLogger();
         }
 
-        public static async Task LogTest(ConsoleTheme? theme, int printDelay = 100)
+        public static Logger CreateDefault()
+        {
+            var defaultTemplate = "{NewLine}[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}";
+            return new LoggerConfiguration()
+                .WriteTo.Debug(outputTemplate: defaultTemplate)
+                .WriteTo.Console(outputTemplate: defaultTemplate)
+                .MinimumLevel.Is(LogEventLevel.Verbose)
+                .CreateLogger();
+        }
+
+        public static async Task LogTest(ConsoleTheme theme, string themeName = "", int printDelay = 100)
         {
             var position = new { Latitude = 25, Longitude = 134 };
+
+            if (themeName != "")
+            {
+                using var defaultLogger = CreateDefault();
+                defaultLogger.Information("Theme name: {ThemeName}", themeName);
+            }
 
             foreach (var logEventLevel in LogLevels)
             {
                 using var logger = Create(theme);
                 var logEvent = logger.ToLogEvent(logEventLevel,
-                    "This is a {LogEventLevel} log message with a json object: {Position}, a number {Count}, a bool: {Boolean}",
+                    "This is a {LogEventLevel} log message with a json object: {Position}, a number {Count}, a bool: {Boolean}, a DateTime: {DateTime}, a Guid: {Guid}",
                     null,
                     "TestClass",
                     "TestMethod",
@@ -46,7 +62,9 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
                     Enum.GetName(typeof(LogEventLevel), logEventLevel),
                     position,
                     9999,
-                    true);
+                    true,
+                    DateTime.Now,
+                    Guid.NewGuid());
                 logger.Write(logEvent);
                 await Task.Delay(printDelay);
             }

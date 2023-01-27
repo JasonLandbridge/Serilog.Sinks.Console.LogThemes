@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
+using Serilog.Sinks.SystemConsole.Themes;
 using Shouldly;
 using Xunit;
 using Xunit.Abstractions;
@@ -20,15 +21,28 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
         public async Task ShouldCreateLogStyleStringWithAllLogThemeStyleSignatures_WhenGivenValidParameters()
         {
             // Arrange
-            var themeNonBright = LogThemes.SixteenNonBright;
-            var theme = LogThemes.Sixteen;
+            var themeDict = new Dictionary<string, ConsoleTheme>()
+            {
+                { nameof(LogThemes.SystemLiterate), LogThemes.SystemLiterate },
+                { nameof(LogThemes.Literate), LogThemes.Literate },
+
+                { nameof(LogThemes.SystemGrayscale), LogThemes.SystemGrayscale },
+                { nameof(LogThemes.Grayscale), LogThemes.Grayscale },
+
+                { nameof(LogThemes.SystemColored), LogThemes.SystemColored },
+
+                { nameof(LogThemes.Code), LogThemes.Code },
+                { nameof(LogThemes.Sixteen), LogThemes.Sixteen },
+                { nameof(LogThemes.SixteenNonBright), LogThemes.SixteenNonBright },
+            };
 
             // Act
-            await TestLogger.LogTest(themeNonBright);
-            await TestLogger.LogTest(theme);
+            foreach (var theme in themeDict)
+            {
+                await TestLogger.LogTest(theme.Value, theme.Key);
+            }
 
             // Assert
-
         }
     }
 };

@@ -1,3 +1,4 @@
+using System;
 using System.Drawing;
 using System.Text;
 
@@ -46,7 +47,6 @@ namespace Serilog.Sinks.Console.LogThemes
         #endregion
 
         #endregion
-
 
 
         #region Style

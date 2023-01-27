@@ -1,9 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<TargetFrameworks>net45;net6.0;net7.0;netstandard1.3;netstandard2.0</TargetFrameworks>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Authors>JasonLandbridge</Authors>
+		<PackageProjectUrl>https://github.com/JasonLandbridge/Serilog.Sinks.Console.LogThemes</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/JasonLandbridge/Serilog.Sinks.Console.LogThemes</RepositoryUrl>
+		<PackageLicenseUrl>https://github.com/JasonLandbridge/Serilog.Sinks.Console.LogThemes/blob/master/LICENSE</PackageLicenseUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>serilog;console;terminal</PackageTags>
 	</PropertyGroup>
 
 </Project>

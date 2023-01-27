@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Serilog.Sinks.Console.LogThemes
 {
-    public static class LogTheme
+    public static partial class LogTheme
     {
         #region FluentApi
 
@@ -46,6 +46,8 @@ namespace Serilog.Sinks.Console.LogThemes
         #endregion
 
         #endregion
+
+
 
         #region Style
 

@@ -5,9 +5,11 @@ namespace Serilog.Sinks.Console.LogThemes
 {
     internal static class LogThemeBuilder
     {
+        internal static string Esc => "\x1b";
+
         internal static string ToTheme(Color? foreground, Color? background, FormatTypeEnum formatType = FormatTypeEnum.None)
         {
-            var builder = new StringBuilder("\x1b["); // ESC character
+            var builder = new StringBuilder(Esc + "["); // ESC character
 
             if (formatType != FormatTypeEnum.None)
                 builder.Append(formatType.ToAnsiString() + ";"); // Formatting style, bold, italic etc

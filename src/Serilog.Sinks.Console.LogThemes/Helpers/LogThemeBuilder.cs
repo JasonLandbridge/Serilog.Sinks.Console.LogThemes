@@ -31,5 +31,30 @@ namespace Serilog.Sinks.Console.LogThemes
 
             return builder.ToString();
         }
+
+        internal static string ToTheme(Ansi16Colors? foreground, Ansi16Colors? background, FormatTypeEnum formatType = FormatTypeEnum.None)
+        {
+            var builder = new StringBuilder();
+
+            if (formatType != FormatTypeEnum.None)
+            {
+                // Formatting style, bold, italic etc
+                builder.Append(Esc + formatType.ToAnsiString() + "m");
+            }
+
+            if (foreground != null)
+            {
+                // Font color
+                builder.Append(Esc + foreground.Value.ToAnsiString());
+            }
+
+            if (background != null)
+            {
+                // Font background color
+                builder.Append(Esc + background.Value.ToAnsiString());
+            }
+
+            return builder.ToString();
+        }
     }
 }

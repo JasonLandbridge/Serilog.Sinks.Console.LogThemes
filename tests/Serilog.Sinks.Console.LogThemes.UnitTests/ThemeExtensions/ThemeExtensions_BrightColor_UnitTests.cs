@@ -31,7 +31,9 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
 
                 { nameof(LogThemes.SystemColored), LogThemes.SystemColored },
 
-                { nameof(LogThemes.Code), LogThemes.Code },
+                { $"{nameof(AnsiConsoleTheme)}.{nameof(AnsiConsoleTheme.Code)}", AnsiConsoleTheme.Code },
+                { $"{nameof(LogThemes)}.{nameof(LogThemes.Code)}", LogThemes.Code },
+
                 { nameof(LogThemes.Sixteen), LogThemes.Sixteen },
                 { nameof(LogThemes.SixteenNonBright), LogThemes.SixteenNonBright },
             };

@@ -4,8 +4,6 @@ namespace Serilog.Sinks.Console.LogThemes
     {
         #region Predefined
 
-        public static string Bold => FormatType(FormatTypeEnum.BoldMode).ToString();
-
         public static string Unthemed => "";
 
         #endregion

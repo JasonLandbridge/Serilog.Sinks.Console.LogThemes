@@ -1,16 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-		<TargetFrameworks>net45;net6.0;net7.0;netstandard1.3;netstandard2.0</TargetFrameworks>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<Authors>JasonLandbridge</Authors>
-		<PackageProjectUrl>https://github.com/JasonLandbridge/Serilog.Sinks.Console.LogThemes</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/JasonLandbridge/Serilog.Sinks.Console.LogThemes</RepositoryUrl>
-		<PackageLicenseUrl>https://github.com/JasonLandbridge/Serilog.Sinks.Console.LogThemes/blob/master/LICENSE</PackageLicenseUrl>
-		<RepositoryType>git</RepositoryType>
-		<PackageTags>serilog;console;terminal</PackageTags>
-	</PropertyGroup>
+    <PropertyGroup>
+        <LangVersion>8.0</LangVersion>
+        <Nullable>enable</Nullable>
+        <TargetFrameworks>net6.0;net7.0;netstandard2.0</TargetFrameworks>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Authors>JasonLandbridge</Authors>
+        <PackageProjectUrl>https://github.com/JasonLandbridge/Serilog.Sinks.Console.LogThemes</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/JasonLandbridge/Serilog.Sinks.Console.LogThemes</RepositoryUrl>
+        <PackageLicenseUrl>https://github.com/JasonLandbridge/Serilog.Sinks.Console.LogThemes/blob/master/LICENSE</PackageLicenseUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>serilog;console;terminal</PackageTags>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0"/>
+    </ItemGroup>
 
 </Project>

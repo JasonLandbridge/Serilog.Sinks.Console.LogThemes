@@ -5,7 +5,7 @@
 
         <IsPackable>false</IsPackable>
 
-        <TargetFrameworks>net6.0;net7.0;netstandard2.0</TargetFrameworks>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
 
         <OutputType>Library</OutputType>
 
@@ -13,9 +13,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2"/>
-        <PackageReference Include="Shouldly" Version="4.1.0"/>
-        <PackageReference Include="xunit" Version="2.4.2"/>
+        <PackageReference Include="Bogus" Version="34.0.2" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.3.2" />
+        <PackageReference Include="Serilog.Sinks.Debug" Version="2.0.0" />
+        <PackageReference Include="Shouldly" Version="4.1.0" />
+        <PackageReference Include="xunit" Version="2.4.2" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
@@ -27,7 +29,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Serilog.Sinks.Console.LogThemes\Serilog.Sinks.Console.LogThemes.csproj"/>
+        <ProjectReference Include="..\..\src\Serilog.Sinks.Console.LogThemes\Serilog.Sinks.Console.LogThemes.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,6 +1,7 @@
 namespace Serilog.Sinks.Console.LogThemes
 {
-    public class LogThemes
+    public static partial class LogThemes
     {
+
     }
 }

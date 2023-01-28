@@ -13,7 +13,7 @@ namespace Serilog.Sinks.Console.LogThemes.Demo
         private static readonly Random Random = new Random();
 
         public static readonly string Template =
-            "{NewLine}{Timestamp:HH:mm:ss} [{Level}] [{ClassName}.{MemberName}:{LineNumber}] => {Message}{NewLine}{Exception}";
+            "{NewLine}[{Timestamp:HH:mm:ss}] [{Level}] [{ClassName}.{MemberName}:{LineNumber}] => {Message:lj}{NewLine}{Exception}";
 
         private static string DefaultTemplate => "{NewLine}[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}";
 
@@ -91,7 +91,7 @@ namespace Serilog.Sinks.Console.LogThemes.Demo
             {
                 var logEvent = logger.ToLogEvent(logEventLevel,
                     "This is a {LogEventLevel} log message with a json object: {Position}",
-                    exception,
+                    null,
                     "TestClass",
                     "TestMethod",
                     Random.Next(1, 1000),

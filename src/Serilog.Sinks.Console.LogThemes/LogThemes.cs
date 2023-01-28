@@ -7,34 +7,48 @@ namespace Serilog.Sinks.Console.LogThemes
     {
         #region SystemConsoleThemes
 
-        public static SystemConsoleTheme SystemLiterate { get; } = new SystemConsoleTheme(ThemeDefinitions.SystemLiterate);
+        public static SystemConsoleTheme SystemLiterate => UseSystemConsoleTheme<LiterateSystemThemeTemplate>();
 
-        public static SystemConsoleTheme SystemGrayscale { get; } = new SystemConsoleTheme(ThemeDefinitions.SystemGrayscale);
+        public static SystemConsoleTheme SystemGrayscale => UseSystemConsoleTheme<GrayscaleSystemThemeTemplate>();
 
-        public static SystemConsoleTheme SystemColored { get; } = new SystemConsoleTheme(ThemeDefinitions.SystemColored);
+        public static SystemConsoleTheme SystemColored => UseSystemConsoleTheme<ColoredSystemThemeTemplate>();
 
         #endregion
 
         #region AnsiThemes
 
-        public static AnsiConsoleTheme Code { get; } = new AnsiConsoleTheme(ThemeDefinitions.Code);
-        public static AnsiConsoleTheme Literate { get; } = new AnsiConsoleTheme(ThemeDefinitions.Literate);
-        public static AnsiConsoleTheme Grayscale { get; } = new AnsiConsoleTheme(ThemeDefinitions.Grayscale);
-        public static AnsiConsoleTheme Sixteen { get; } = new AnsiConsoleTheme(ThemeDefinitions.Sixteen);
-        public static AnsiConsoleTheme SixteenNonBright { get; } = new AnsiConsoleTheme(ThemeDefinitions.SixteenNonBright);
+        public static AnsiConsoleTheme Code => UseAnsiTheme<CodeAnsiThemeTemplate>();
+        public static AnsiConsoleTheme Literate => UseAnsiTheme<LiterateAnsiThemeTemplate>();
+        public static AnsiConsoleTheme Grayscale => UseAnsiTheme<GrayscaleAnsiThemeTemplate>();
+        public static AnsiConsoleTheme Sixteen => UseAnsiTheme<SixteenAnsiThemeTemplate>();
+        public static AnsiConsoleTheme SixteenNonBright => UseAnsiTheme<SixteenNotBrightAnsiThemeTemplate>();
 
         #endregion
 
         #region Use
 
-        public static ConsoleTheme UseSystemConsoleTheme<T>() where T : BaseSystemConsoleTheme, new()
+        public static SystemConsoleTheme UseSystemConsoleTheme<T>() where T : BaseSystemConsoleTheme, new()
         {
-            return new SystemConsoleTheme(new T().ToTheme());
+            return new SystemConsoleTheme(new T().ToStyleDictionary());
         }
 
-        public static ConsoleTheme UseAnsiTheme<T>() where T : BaseAnsiTheme, new()
+        public static AnsiConsoleTheme UseAnsiTheme<T>() where T : AnsiBaseTheme, new()
         {
-            return new AnsiConsoleTheme(new T().ToTheme());
+            return new AnsiConsoleTheme(new T().ToStyleDictionary());
+        }
+
+        #endregion
+
+        #region Get Dictionary Styles
+
+        internal static Dictionary<ConsoleThemeStyle, SystemConsoleThemeStyle> SystemStyles<T>() where T : BaseSystemConsoleTheme, new()
+        {
+            return new T().ToStyleDictionary();
+        }
+
+        internal static Dictionary<ConsoleThemeStyle, string> AnsiStyles<T>() where T : AnsiBaseTheme, new()
+        {
+            return new T().ToStyleDictionary();
         }
 
         #endregion

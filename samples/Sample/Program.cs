@@ -6,7 +6,7 @@ using Serilog;
 using Serilog.Sinks.Console.LogThemes;
 
 Log.Logger = new LoggerConfiguration()
-    .WriteTo.Console(theme: LogThemes.UseAnsiTheme<CustomAnsiTheme>()) // <= Select theme here
+    .WriteTo.Console(theme: LogThemes.UseAnsiTheme<CustomCodeThemeTemplate>()) // <= Select theme here
     .CreateLogger();
 
 Log.Information("Hello, world!");

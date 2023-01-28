@@ -37,7 +37,7 @@ namespace Serilog.Sinks.Console.LogThemes
 
         protected virtual SystemConsoleThemeStyle LevelFatal { get; }
 
-        public Dictionary<ConsoleThemeStyle, SystemConsoleThemeStyle> ToTheme()
+        public Dictionary<ConsoleThemeStyle, SystemConsoleThemeStyle> ToStyleDictionary()
         {
             return new Dictionary<ConsoleThemeStyle, SystemConsoleThemeStyle>
             {

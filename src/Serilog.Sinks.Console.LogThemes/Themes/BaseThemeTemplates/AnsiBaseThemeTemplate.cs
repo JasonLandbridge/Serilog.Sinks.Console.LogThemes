@@ -3,7 +3,7 @@ using Serilog.Sinks.SystemConsole.Themes;
 
 namespace Serilog.Sinks.Console.LogThemes
 {
-    public abstract class BaseAnsiTheme
+    public abstract class AnsiBaseTheme
     {
         protected abstract string Text { get; }
 
@@ -37,7 +37,7 @@ namespace Serilog.Sinks.Console.LogThemes
 
         protected abstract string LevelFatal { get; }
 
-        public Dictionary<ConsoleThemeStyle, string> ToTheme()
+        public Dictionary<ConsoleThemeStyle, string> ToStyleDictionary()
         {
             return new Dictionary<ConsoleThemeStyle, string>
             {
@@ -58,6 +58,11 @@ namespace Serilog.Sinks.Console.LogThemes
                 [ConsoleThemeStyle.LevelError] = LevelError,
                 [ConsoleThemeStyle.LevelFatal] = LevelFatal,
             };
+        }
+
+        public AnsiConsoleTheme ToTheme()
+        {
+            return new AnsiConsoleTheme(ToStyleDictionary());
         }
     }
 }

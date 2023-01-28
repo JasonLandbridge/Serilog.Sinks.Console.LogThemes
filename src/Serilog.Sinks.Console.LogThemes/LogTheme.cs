@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Serilog.Sinks.Console.LogThemes
 {
-    public static partial class LogTheme
+    public static class LogTheme
     {
         #region FluentApi
 

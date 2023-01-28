@@ -3,9 +3,9 @@ using System.Drawing;
 
 namespace Serilog.Sinks.Console.LogThemes
 {
-    public static class ThemeExtensions
+    internal static class ThemeExtensions
     {
-        public static string ToAnsiString(this FormatTypeEnum formatType)
+        internal static string ToAnsiString(this FormatTypeEnum formatType)
         {
             return formatType switch
             {
@@ -22,7 +22,7 @@ namespace Serilog.Sinks.Console.LogThemes
             };
         }
 
-        public static string ToForegroundAnsiString(this Color16 color16)
+        internal static string ToForegroundAnsiString(this Color16 color16)
         {
             switch (color16)
             {
@@ -87,7 +87,7 @@ namespace Serilog.Sinks.Console.LogThemes
             }
         }
 
-        public static string ToBackgroundAnsiString(this Color16 color16)
+        internal static string ToBackgroundAnsiString(this Color16 color16)
         {
             switch (color16)
             {
@@ -153,7 +153,7 @@ namespace Serilog.Sinks.Console.LogThemes
         }
 
 
-        public static string ToForegroundAnsiString(this Color? color)
+        internal static string ToForegroundAnsiString(this Color? color)
         {
             if (color is null)
                 return "";
@@ -166,7 +166,7 @@ namespace Serilog.Sinks.Console.LogThemes
             return $"38;5;0{color.Value.R};0{color.Value.G};0{color.Value.B}";
         }
 
-        public static string ToBackgroundAnsiString(this Color? color)
+        internal static string ToBackgroundAnsiString(this Color? color)
         {
             if (color is null)
                 return "";

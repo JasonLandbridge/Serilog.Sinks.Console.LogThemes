@@ -3,6 +3,7 @@ namespace Serilog.Sinks.Console.LogThemes
     public enum Ansi16Colors
     {
         Reset = 0,
+
         Black = 30,
         Red = 31,
         Green = 32,
@@ -11,6 +12,15 @@ namespace Serilog.Sinks.Console.LogThemes
         Magenta = 35,
         Cyan = 36,
         White = 37,
+
+        BlackBold = 40,
+        RedBold = 41,
+        GreenBold = 42,
+        YellowBold = 43,
+        BlueBold = 44,
+        MagentaBold = 45,
+        CyanBold = 46,
+        WhiteBold = 47,
 
         Default = 39,
 

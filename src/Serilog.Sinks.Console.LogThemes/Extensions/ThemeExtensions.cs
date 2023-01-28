@@ -27,20 +27,37 @@ namespace Serilog.Sinks.Console.LogThemes
             switch (ansi16Colors)
             {
                 case Ansi16Colors.Black:
-                    return "30;1m";
+                    return "30m";
                 case Ansi16Colors.Red:
-                    return "31;1m";
+                    return "31m";
                 case Ansi16Colors.Green:
-                    return "32;1m";
+                    return "32m";
                 case Ansi16Colors.Yellow:
-                    return "33;1m";
+                    return "33m";
                 case Ansi16Colors.Blue:
-                    return "34;1m";
+                    return "34m";
                 case Ansi16Colors.Magenta:
-                    return "35;1m";
+                    return "35m";
                 case Ansi16Colors.Cyan:
-                    return "36;1m";
+                    return "36m";
                 case Ansi16Colors.White:
+                    return "37m";
+
+                case Ansi16Colors.BlackBold:
+                    return "30;1m";
+                case Ansi16Colors.RedBold:
+                    return "31;1m";
+                case Ansi16Colors.GreenBold:
+                    return "32;1m";
+                case Ansi16Colors.YellowBold:
+                    return "33;1m";
+                case Ansi16Colors.BlueBold:
+                    return "34;1m";
+                case Ansi16Colors.MagentaBold:
+                    return "35;1m";
+                case Ansi16Colors.CyanBold:
+                    return "36;1m";
+                case Ansi16Colors.WhiteBold:
                     return "37;1m";
 
                 case Ansi16Colors.BrightBlack:
@@ -64,6 +81,7 @@ namespace Serilog.Sinks.Console.LogThemes
                     return "39;1m";
                 case Ansi16Colors.Reset:
                     return "0;1m";
+
 
                 default:
                     throw new ArgumentOutOfRangeException(nameof(ansi16Colors), ansi16Colors, null);

@@ -1,7 +1,5 @@
 using System.Collections.Generic;
 using System.Drawing;
-using ANSITerm;
-using Serilog.Sinks.SystemConsole.Themes;
 using Shouldly;
 using Xunit;
 using Xunit.Abstractions;
@@ -38,7 +36,7 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
         }
 
         [Fact]
-        public void ShouldHaveTheSameAnsiCodesAsSerilogsSinksConsole_WhenUsingFluentStyling()
+        public void ShouldHaveTheSameAnsiCodesAsSerilogsSinksConsoleThemeCode_WhenUsingFluentStyling()
         {
             var dict = TestAnsiConsoleThemes.Code;
 
@@ -46,7 +44,8 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
             {
                 ThemeDefinitions.Code.ContainsKey(originalStyle.Key).ShouldBeTrue();
                 var newStyleValue = ThemeDefinitions.Code[originalStyle.Key];
-                newStyleValue.ShouldBe(originalStyle.Value, $"Key: {originalStyle.Key}");
+                var originalStyleValue = originalStyle.Value;
+                newStyleValue.ShouldBe(originalStyleValue, $"Key: {originalStyle.Key}");
             }
         }
     }

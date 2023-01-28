@@ -19,31 +19,31 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
                     var dict = new Dictionary<ConsoleThemeStyle, string>
                     {
                         // Timestamp, classname, method name and line number
-                        [ConsoleThemeStyle.SecondaryText] = styles[0].ToStyle(),
+                        [ConsoleThemeStyle.SecondaryText] = styles[0],
 
                         // Brackets, dots and colons
-                        [ConsoleThemeStyle.TertiaryText] = styles[1].ToStyle(),
+                        [ConsoleThemeStyle.TertiaryText] = styles[1],
 
                         // Log message
-                        [ConsoleThemeStyle.Text] = styles[2].ToStyle(),
+                        [ConsoleThemeStyle.Text] = styles[2],
 
-                        [ConsoleThemeStyle.Invalid] = styles[3].ToStyle(),
-                        [ConsoleThemeStyle.Null] = styles[4].ToStyle(),
-                        [ConsoleThemeStyle.Name] = styles[5].ToStyle(),
+                        [ConsoleThemeStyle.Invalid] = styles[3],
+                        [ConsoleThemeStyle.Null] = styles[4],
+                        [ConsoleThemeStyle.Name] = styles[5],
 
                         // Log values
-                        [ConsoleThemeStyle.String] = styles[6].ToStyle(),
-                        [ConsoleThemeStyle.Number] = styles[7].ToStyle(),
-                        [ConsoleThemeStyle.Boolean] = styles[8].ToStyle(),
-                        [ConsoleThemeStyle.Scalar] = styles[9].ToStyle(),
+                        [ConsoleThemeStyle.String] = styles[6],
+                        [ConsoleThemeStyle.Number] = styles[7],
+                        [ConsoleThemeStyle.Boolean] = styles[8],
+                        [ConsoleThemeStyle.Scalar] = styles[9],
 
                         // Log Level coloring
-                        // [ConsoleThemeStyle.LevelVerbose] = styles[10].ToStyle(),
-                        // [ConsoleThemeStyle.LevelDebug] = styles[11].ToStyle(),
-                        // [ConsoleThemeStyle.LevelInformation] = styles[12].ToStyle(),
-                        // [ConsoleThemeStyle.LevelWarning] = styles[13].ToStyle(),
-                        // [ConsoleThemeStyle.LevelError] = styles[14].ToStyle(),
-                        // [ConsoleThemeStyle.LevelFatal] = styles[15].ToStyle(),
+                        // [ConsoleThemeStyle.LevelVerbose] = styles[10],
+                        // [ConsoleThemeStyle.LevelDebug] = styles[11],
+                        // [ConsoleThemeStyle.LevelInformation] = styles[12],
+                        // [ConsoleThemeStyle.LevelWarning] = styles[13],
+                        // [ConsoleThemeStyle.LevelError] = styles[14],
+                        // [ConsoleThemeStyle.LevelFatal] = styles[15],
 
                         // Log Level coloring
                         [ConsoleThemeStyle.LevelVerbose] = LogTheme.Style(Color.White, Color.DarkGray),
@@ -57,28 +57,24 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
                 });
         }
 
-        public static Faker<LogStyle> GetFakeLogStyle(int seed = 0, bool foreGround = false, bool background = false)
+        public static Faker<string> GetFakeLogStyle(int seed = 0, bool foreGround = false, bool background = false)
         {
-            return new Faker<LogStyle>()
+            return new Faker<string>()
                 .UseSeed(seed)
                 .CustomInstantiator(faker =>
                 {
-                    var style = new LogStyle();
-                    if (foreGround)
-                    {
-                        var colorString = faker.Internet.Color(format: ColorFormat.Delimited).Split(',').Select(int.Parse).ToList();
-                        style.SetForeground(Color.FromArgb(colorString[0], colorString[1], colorString[2]));
-                    }
 
-                    if (background)
-                    {
                         var colorString = faker.Internet.Color(format: ColorFormat.Delimited).Split(',').Select(int.Parse).ToList();
-                        style.SetBackground(Color.FromArgb(colorString[0], colorString[1], colorString[2]));
-                    }
+                        var foreGroundColor = Color.FromArgb(colorString[0], colorString[1], colorString[2]);
+
+
+
+                        colorString = faker.Internet.Color(format: ColorFormat.Delimited).Split(',').Select(int.Parse).ToList();
+                        var backgroundColor =  Color.FromArgb(colorString[0], colorString[1], colorString[2]);
+
 
                     var formatType = faker.Random.Enum<FormatTypeEnum>();
-                    style.SetFormatType(formatType);
-                    return style;
+                    return LogThemeBuilder.ToTheme(foreGroundColor, backgroundColor, formatType);
                 });
         }
     }

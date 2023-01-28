@@ -1,7 +1,6 @@
 using System;
 using System.Drawing;
 using System.Text;
-using ANSITerm;
 
 namespace Serilog.Sinks.Console.LogThemes
 {
@@ -11,46 +10,46 @@ namespace Serilog.Sinks.Console.LogThemes
 
         #region Create
 
-        public static LogStyle Foreground(Color foreGroundColor)
+        public static string Foreground(Color foreGroundColor)
         {
-            return new LogStyle().Foreground(foreGroundColor);
+            return LogThemeBuilder.ToTheme(foreGroundColor, null);
         }
 
-        public static LogStyle Foreground(Color256 foreGroundColor)
+        public static string Foreground(Color256 foreGroundColor)
         {
-            return new LogStyle().Foreground(foreGroundColor);
+            return string.Empty.Foreground(foreGroundColor);
         }
 
-        public static LogStyle Foreground(Ansi16Colors foreGroundColor)
+        public static string Foreground(Ansi16Colors foreGroundColor, bool bold = false)
         {
-            return new LogStyle().Foreground(foreGroundColor);
+            return string.Empty.Foreground(foreGroundColor, bold);
         }
 
-        public static LogStyle Background(Color backGroundColor)
+        public static string Background(Color backGroundColor)
         {
-            return new LogStyle().Background(backGroundColor);
+            return LogThemeBuilder.ToTheme(null, backGroundColor);
         }
 
-        public static LogStyle Background(Color256 backGroundColor)
+        public static string Background(Color256 backGroundColor)
         {
-            return new LogStyle().Background(backGroundColor);
+            return string.Empty.Background(backGroundColor);
         }
 
-        public static LogStyle Background(Ansi16Colors backGroundColor)
+        public static string Background(Ansi16Colors backGroundColor)
         {
-            return new LogStyle().Background(backGroundColor);
+            return string.Empty.Background(backGroundColor);
         }
 
         #region FormatType
 
-        public static LogStyle FormatType(FormatTypeEnum formatType)
+        public static string FormatType(FormatTypeEnum formatType)
         {
-            return new LogStyle().FormatType(formatType);
+            return string.Empty.FormatType(formatType);
         }
 
-        public static LogStyle Bold()
+        public static string Bold()
         {
-            return new LogStyle().FormatType(FormatTypeEnum.BoldMode);
+            return string.Empty.FormatType(FormatTypeEnum.BoldMode);
         }
 
         #endregion
@@ -61,40 +60,38 @@ namespace Serilog.Sinks.Console.LogThemes
 
         #region Foreground
 
-        public static LogStyle Foreground(this LogStyle logStyle, Color256 foreGroundColor)
+        public static string Foreground(this string logStyle, Color256 foreGroundColor)
         {
-            var color = Color.FromArgb((int)foreGroundColor, (int)foreGroundColor, (int)foreGroundColor);
-            return logStyle.SetForeground(color);
+            return logStyle + LogThemeBuilder.ToTheme(foreGroundColor, null);
         }
 
-        public static LogStyle Foreground(this LogStyle logStyle, Ansi16Colors foreGroundColor)
+        public static string Foreground(this string logStyle, Ansi16Colors foreGroundColor, bool bold = false)
         {
-            return logStyle.SetForeground(new ColorValue(foreGroundColor).AsColor());
+            return logStyle + LogThemeBuilder.ToTheme(foreGroundColor, null, bold: bold);
         }
 
-        public static LogStyle Foreground(this LogStyle logStyle, Color foreGroundColor)
+        public static string Foreground(this string logStyle, Color foreGroundColor)
         {
-            return logStyle.SetForeground(foreGroundColor);
+            return logStyle + LogThemeBuilder.ToTheme(foreGroundColor, null);
         }
 
         #endregion
 
         #region Background
 
-        public static LogStyle Background(this LogStyle logStyle, Color backGroundColor)
+        public static string Background(this string logStyle, Color backGroundColor)
         {
-            return logStyle.SetBackground(backGroundColor);
+            return logStyle + LogThemeBuilder.ToTheme(null, backGroundColor);
         }
 
-        public static LogStyle Background(this LogStyle logStyle, Color256 backGroundColor)
+        public static string Background(this string logStyle, Color256 backGroundColor)
         {
-            var color = Color.FromArgb((int)backGroundColor, (int)backGroundColor, (int)backGroundColor);
-            return logStyle.SetForeground(color);
+            return logStyle + LogThemeBuilder.ToTheme(null, backGroundColor);
         }
 
-        public static LogStyle Background(this LogStyle logStyle, Ansi16Colors backGroundColor)
+        public static string Background(this string logStyle, Ansi16Colors backGroundColor)
         {
-            return logStyle.SetForeground(new ColorValue(backGroundColor).AsColor());
+            return logStyle + LogThemeBuilder.ToTheme(null, backGroundColor);
         }
 
         #endregion
@@ -102,14 +99,14 @@ namespace Serilog.Sinks.Console.LogThemes
 
         #region FormatType
 
-        public static LogStyle FormatType(this LogStyle logStyle, FormatTypeEnum formatType)
+        public static string FormatType(this string logStyle, FormatTypeEnum formatType)
         {
-            return logStyle.SetFormatType(formatType);
+            return logStyle + LogThemeBuilder.ToTheme(formatType);
         }
 
-        public static LogStyle Bold(this LogStyle logStyle)
+        public static string Bold(this string logStyle)
         {
-            return logStyle.SetFormatType(FormatTypeEnum.BoldMode);
+            return logStyle.FormatType(FormatTypeEnum.BoldMode);
         }
 
         #endregion
@@ -138,7 +135,7 @@ namespace Serilog.Sinks.Console.LogThemes
 
         public static string Style()
         {
-            return "";
+            return string.Empty;
         }
 
         #endregion

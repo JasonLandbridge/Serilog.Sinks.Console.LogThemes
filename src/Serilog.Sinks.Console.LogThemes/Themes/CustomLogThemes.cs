@@ -12,16 +12,14 @@ namespace Serilog.Sinks.Console.LogThemes
                 // Timestamp, classname, method name and line number
                 [ConsoleThemeStyle.SecondaryText] = LogTheme
                     .Foreground(Color.Gray)
-                    .FormatType(FormatTypeEnum.ItalicMode)
-                    .ToStyle(),
+                    .FormatType(FormatTypeEnum.ItalicMode),
 
                 // Brackets, dots and colons
                 [ConsoleThemeStyle.TertiaryText] = LogTheme.Style(Color.Gray),
 
                 // Log message
                 [ConsoleThemeStyle.Text] = LogTheme
-                    .Foreground(Color.LightGray)
-                    .ToStyle(),
+                    .Foreground(Color.LightGray),
 
                 [ConsoleThemeStyle.Invalid] = LogTheme.Style(Color.Yellow),
                 [ConsoleThemeStyle.Null] = LogTheme.Style(Color.LightGray),

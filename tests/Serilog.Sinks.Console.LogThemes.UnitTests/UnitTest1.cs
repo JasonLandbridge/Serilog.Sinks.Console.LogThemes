@@ -13,7 +13,7 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
             LogTheme.Style(Color.White, Color.Black, FormatTypeEnum.BoldMode);
             LogTheme.Style(Color.White, FormatTypeEnum.BoldMode);
 
-            LogTheme.Foreground(Color.Gray).FormatType(FormatTypeEnum.ItalicMode).ToStyle();
+            LogTheme.Foreground(Color.Gray).FormatType(FormatTypeEnum.ItalicMode);
         }
     }
 };

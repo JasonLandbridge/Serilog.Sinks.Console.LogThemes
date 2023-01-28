@@ -22,10 +22,10 @@ Note: All images are screenshots from Jetbrains Rider with Rider Light theme and
 
 ###  - `LogThemes.SystemGrayscale` - a theme using only shades of gray, white, and black
 Light-mode:
-![](https://raw.githubusercontent.com/JasonLandbridge/Serilog.Sinks.Console.LogThemes/Assets/Screenshots/SystemGrayscale-light-mode.png "System Grayscale Light Mode Screenshot")
+![System Grayscale Light Mode Screenshot](./Assets/Screenshots/SystemGrayscale-light-mode.png "System Grayscale Light Mode Screenshot")
 
 Dark-mode:
-![](https://raw.githubusercontent.com/JasonLandbridge/Serilog.Sinks.Console.LogThemes/Assets/Screenshots/SystemGrayscale-dark-mode.png "System Grayscale Dark Mode Screenshot")
+![System Grayscale Dark Mode Screenshot](./Assets/Screenshots/SystemGrayscale-dark-mode.png "System Grayscale Dark Mode Screenshot")
 
 ###  - `LogThemes.Literate` - an ANSI 256-color version of the "literate" theme
 ###  - `LogThemes.Grayscale` - an ANSI 256-color version of the "grayscale" theme

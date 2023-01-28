@@ -10,7 +10,9 @@ namespace Serilog.Sinks.Console.LogThemes
 
         #region Create
 
-        public static string Empty => "";
+        public static string Unthemed => "";
+
+        #region Foreground
 
         public static string Foreground(Color foreGroundColor)
         {
@@ -27,9 +29,13 @@ namespace Serilog.Sinks.Console.LogThemes
             return string.Empty.Foreground(foreGroundColor, bold);
         }
 
+        #endregion
+
+        #region Background
+
         public static string Background(Color backGroundColor)
         {
-            return LogThemeBuilder.ToTheme(null, backGroundColor);
+            return string.Empty.Background(backGroundColor);
         }
 
         public static string Background(Color256 backGroundColor)
@@ -42,6 +48,8 @@ namespace Serilog.Sinks.Console.LogThemes
             return string.Empty.Background(backGroundColor);
         }
 
+        #endregion
+
         #region FormatType
 
         public static string FormatType(FormatTypeEnum formatType)
@@ -51,7 +59,7 @@ namespace Serilog.Sinks.Console.LogThemes
 
         public static string Bold()
         {
-            return string.Empty.FormatType(FormatTypeEnum.BoldMode);
+            return FormatType(FormatTypeEnum.BoldMode);
         }
 
         #endregion
@@ -120,21 +128,6 @@ namespace Serilog.Sinks.Console.LogThemes
 
         #region Style
 
-        public static string Style(Color foreground, Color background, FormatTypeEnum formatType = FormatTypeEnum.None)
-        {
-            return Foreground(foreground).Background(background).FormatType(formatType);
-        }
-
-        public static string Style(Color foreground, FormatTypeEnum formatType)
-        {
-            return Foreground(foreground).FormatType(formatType);
-        }
-
-        public static string Style(Color foreground)
-        {
-            return Foreground(foreground);
-        }
-
         #region Color16
 
         public static string Style(Ansi16Colors foreground, Ansi16Colors background)
@@ -153,10 +146,24 @@ namespace Serilog.Sinks.Console.LogThemes
 
         #endregion
 
-        public static string Style()
+        #region Color
+
+        public static string Style(Color foreground, Color background, FormatTypeEnum formatType = FormatTypeEnum.None)
         {
-            return string.Empty;
+            return Foreground(foreground).Background(background).FormatType(formatType);
         }
+
+        public static string Style(Color foreground, FormatTypeEnum formatType)
+        {
+            return Foreground(foreground).FormatType(formatType);
+        }
+
+        public static string Style(Color foreground)
+        {
+            return Foreground(foreground);
+        }
+
+        #endregion
 
         #endregion
     }

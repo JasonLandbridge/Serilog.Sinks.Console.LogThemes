@@ -75,22 +75,42 @@ namespace Serilog.Sinks.Console.LogThemes
 
         internal static Dictionary<ConsoleThemeStyle, string> Sixteen { get; } = new Dictionary<ConsoleThemeStyle, string>
         {
-            [ConsoleThemeStyle.Text] = LogTheme.Empty,
-            [ConsoleThemeStyle.SecondaryText] = LogTheme.Empty,
-            [ConsoleThemeStyle.TertiaryText] = LogTheme.Empty,
+            [ConsoleThemeStyle.Text] = LogTheme.Unthemed,
+            [ConsoleThemeStyle.SecondaryText] = LogTheme.Unthemed,
+            [ConsoleThemeStyle.TertiaryText] = LogTheme.Unthemed,
             [ConsoleThemeStyle.Invalid] = LogTheme.Foreground(Ansi16Colors.Yellow),
             [ConsoleThemeStyle.Null] = LogTheme.Foreground(Ansi16Colors.Blue),
-            [ConsoleThemeStyle.Name] = LogTheme.Empty,
+            [ConsoleThemeStyle.Name] = LogTheme.Unthemed,
             [ConsoleThemeStyle.String] = LogTheme.Foreground(Ansi16Colors.Cyan),
             [ConsoleThemeStyle.Number] = LogTheme.Foreground(Ansi16Colors.Magenta),
             [ConsoleThemeStyle.Boolean] = LogTheme.Foreground(Ansi16Colors.Blue),
             [ConsoleThemeStyle.Scalar] = LogTheme.Foreground(Ansi16Colors.Green),
-            [ConsoleThemeStyle.LevelVerbose] = LogTheme.Empty,
+            [ConsoleThemeStyle.LevelVerbose] = LogTheme.Unthemed,
             [ConsoleThemeStyle.LevelDebug] = LogTheme.Bold(),
             [ConsoleThemeStyle.LevelInformation] = LogTheme.Foreground(Ansi16Colors.CyanBold),
             [ConsoleThemeStyle.LevelWarning] = LogTheme.Foreground(Ansi16Colors.YellowBold),
             [ConsoleThemeStyle.LevelError] = LogTheme.Foreground(Ansi16Colors.RedBold),
             [ConsoleThemeStyle.LevelFatal] = LogTheme.Foreground(Ansi16Colors.RedBold),
+        };
+
+        internal static Dictionary<ConsoleThemeStyle, string> SixteenNonBright { get; } = new Dictionary<ConsoleThemeStyle, string>
+        {
+            [ConsoleThemeStyle.Text] = LogTheme.Unthemed,
+            [ConsoleThemeStyle.SecondaryText] = LogTheme.Unthemed,
+            [ConsoleThemeStyle.TertiaryText] = LogTheme.Unthemed,
+            [ConsoleThemeStyle.Invalid] = LogTheme.Foreground(Ansi16Colors.Yellow),
+            [ConsoleThemeStyle.Null] = LogTheme.Foreground(Ansi16Colors.Blue),
+            [ConsoleThemeStyle.Name] = LogTheme.Unthemed,
+            [ConsoleThemeStyle.String] =  LogTheme.Foreground(Ansi16Colors.Cyan),
+            [ConsoleThemeStyle.Number] = LogTheme.Foreground(Ansi16Colors.Magenta),
+            [ConsoleThemeStyle.Boolean] = LogTheme.Foreground(Ansi16Colors.Blue),
+            [ConsoleThemeStyle.Scalar] = LogTheme.Foreground(Ansi16Colors.Green),
+            [ConsoleThemeStyle.LevelVerbose] = LogTheme.Unthemed,
+            [ConsoleThemeStyle.LevelDebug] = LogTheme.Foreground(Ansi16Colors.Magenta),
+            [ConsoleThemeStyle.LevelInformation] = LogTheme.Foreground(Ansi16Colors.Cyan),
+            [ConsoleThemeStyle.LevelWarning] = LogTheme.Foreground(Ansi16Colors.Yellow),
+            [ConsoleThemeStyle.LevelError] = LogTheme.Foreground(Ansi16Colors.Red),
+            [ConsoleThemeStyle.LevelFatal] = LogTheme.Foreground(Ansi16Colors.Red),
         };
 
         #endregion

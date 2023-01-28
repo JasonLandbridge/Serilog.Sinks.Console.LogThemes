@@ -32,6 +32,5 @@ namespace Serilog.Sinks.Console.LogThemes
         BrightMagenta = 95,
         BrightCyan = 96,
         BrightWhite = 97,
-
     }
 }

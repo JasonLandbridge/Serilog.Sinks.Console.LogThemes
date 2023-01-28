@@ -22,9 +22,9 @@ jobs:
             6.x
             7.x
       - name: Restore dependencies
-        run: dotnet restore Serilog.Sinks.Console.LogThemes
+        run: dotnet restore ./src/Serilog.Sinks.Console.LogThemes/Serilog.Sinks.Console.LogThemes.csproj
       - name: Build
-        run: dotnet build Serilog.Sinks.Console.LogThemes --no-restore
+        run: dotnet build ./src/Serilog.Sinks.Console.LogThemes/Serilog.Sinks.Console.LogThemes.csproj --no-restore
       - name: Run tests
         run: dotnet test /p:Configuration=Release --no-restore --no-build --verbosity normal
 

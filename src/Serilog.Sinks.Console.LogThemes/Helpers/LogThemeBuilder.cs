@@ -32,7 +32,11 @@ namespace Serilog.Sinks.Console.LogThemes
             return builder.ToString();
         }
 
-        internal static string ToTheme(Ansi16Colors? foreground, Ansi16Colors? background, FormatTypeEnum formatType = FormatTypeEnum.None, bool bold = false)
+        internal static string ToTheme(
+            Ansi16Colors? foreground,
+            Ansi16Colors? background,
+            FormatTypeEnum formatType = FormatTypeEnum.None,
+            bool bold = false)
         {
             var builder = new StringBuilder();
 
@@ -45,13 +49,13 @@ namespace Serilog.Sinks.Console.LogThemes
             if (foreground != null)
             {
                 // Font color
-                builder.Append(Esc + foreground.Value.ToAnsiString());
+                builder.Append(Esc + foreground.Value.ToForegroundAnsiString());
             }
 
             if (background != null)
             {
                 // Font background color
-                builder.Append(Esc + background.Value.ToAnsiString());
+                builder.Append(Esc + background.Value.ToBackgroundAnsiString());
             }
 
             return builder.ToString();
@@ -70,13 +74,13 @@ namespace Serilog.Sinks.Console.LogThemes
             if (foreground != null)
             {
                 // Font color
-                builder.Append(Esc + "38;5;" + ((int)foreground.Value).ToString("D4")  + "m");
+                builder.Append(Esc + "38;5;" + ((int)foreground.Value).ToString("D4") + "m");
             }
 
             if (background != null)
             {
                 // Font background color
-                builder.Append(Esc + "48;5;" + ((int)background.Value).ToString("D4")  + "m");
+                builder.Append(Esc + "48;5;" + ((int)background.Value).ToString("D4") + "m");
             }
 
             return builder.ToString();

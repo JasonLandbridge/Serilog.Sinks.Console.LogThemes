@@ -10,6 +10,8 @@ namespace Serilog.Sinks.Console.LogThemes
 
         #region Create
 
+        public static string Empty => "";
+
         public static string Foreground(Color foreGroundColor)
         {
             return LogThemeBuilder.ToTheme(foreGroundColor, null);
@@ -120,18 +122,36 @@ namespace Serilog.Sinks.Console.LogThemes
 
         public static string Style(Color foreground, Color background, FormatTypeEnum formatType = FormatTypeEnum.None)
         {
-            return Foreground(foreground).Background(background).FormatType(formatType).ToString();
+            return Foreground(foreground).Background(background).FormatType(formatType);
         }
 
         public static string Style(Color foreground, FormatTypeEnum formatType)
         {
-            return Foreground(foreground).FormatType(formatType).ToString();
+            return Foreground(foreground).FormatType(formatType);
         }
 
         public static string Style(Color foreground)
         {
-            return Foreground(foreground).ToString();
+            return Foreground(foreground);
         }
+
+        #region Color16
+
+        public static string Style(Ansi16Colors foreground, Ansi16Colors background)
+        {
+            return Foreground(foreground).Background(background);
+        }
+
+        #endregion
+
+        #region Color256
+
+        public static string Style(Color256 foreground, Color256 background)
+        {
+            return Foreground(foreground).Background(background);
+        }
+
+        #endregion
 
         public static string Style()
         {

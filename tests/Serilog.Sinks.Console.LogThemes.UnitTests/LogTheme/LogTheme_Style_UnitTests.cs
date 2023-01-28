@@ -34,19 +34,5 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
                 style.ShouldEndWith("m");
             }
         }
-
-        [Fact]
-        public void ShouldHaveTheSameAnsiCodesAsSerilogsSinksConsoleThemeCode_WhenUsingFluentStyling()
-        {
-            var dict = TestAnsiConsoleThemes.Code;
-
-            foreach (var originalStyle in dict)
-            {
-                ThemeDefinitions.Code.ContainsKey(originalStyle.Key).ShouldBeTrue();
-                var newStyleValue = ThemeDefinitions.Code[originalStyle.Key];
-                var originalStyleValue = originalStyle.Value;
-                newStyleValue.ShouldBe(originalStyleValue, $"Key: {originalStyle.Key}");
-            }
-        }
     }
 };

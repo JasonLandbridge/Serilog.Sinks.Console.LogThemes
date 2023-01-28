@@ -22,7 +22,7 @@ namespace Serilog.Sinks.Console.LogThemes
             };
         }
 
-        public static string ToAnsiString(this Ansi16Colors ansi16Colors)
+        public static string ToForegroundAnsiString(this Ansi16Colors ansi16Colors)
         {
             switch (ansi16Colors)
             {
@@ -78,10 +78,74 @@ namespace Serilog.Sinks.Console.LogThemes
                     return "97;1m";
 
                 case Ansi16Colors.Default:
-                    return "39;1m";
+                    return "39m";
                 case Ansi16Colors.Reset:
-                    return "0;1m";
+                    return "0m";
 
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(ansi16Colors), ansi16Colors, null);
+            }
+        }
+
+        public static string ToBackgroundAnsiString(this Ansi16Colors ansi16Colors)
+        {
+            switch (ansi16Colors)
+            {
+                case Ansi16Colors.Black:
+                    return "40m";
+                case Ansi16Colors.Red:
+                    return "41m";
+                case Ansi16Colors.Green:
+                    return "42m";
+                case Ansi16Colors.Yellow:
+                    return "43m";
+                case Ansi16Colors.Blue:
+                    return "44m";
+                case Ansi16Colors.Magenta:
+                    return "45m";
+                case Ansi16Colors.Cyan:
+                    return "46m";
+                case Ansi16Colors.White:
+                    return "47m";
+
+                case Ansi16Colors.BlackBold:
+                    return "30;1m";
+                case Ansi16Colors.RedBold:
+                    return "31;1m";
+                case Ansi16Colors.GreenBold:
+                    return "32;1m";
+                case Ansi16Colors.YellowBold:
+                    return "33;1m";
+                case Ansi16Colors.BlueBold:
+                    return "34;1m";
+                case Ansi16Colors.MagentaBold:
+                    return "35;1m";
+                case Ansi16Colors.CyanBold:
+                    return "36;1m";
+                case Ansi16Colors.WhiteBold:
+                    return "37;1m";
+
+                case Ansi16Colors.BrightBlack:
+                    return "100;1m";
+                case Ansi16Colors.BrightRed:
+                    return "101;1m";
+                case Ansi16Colors.BrightGreen:
+                    return "102;1m";
+                case Ansi16Colors.BrightYellow:
+                    return "103;1m";
+                case Ansi16Colors.BrightBlue:
+                    return "104;1m";
+                case Ansi16Colors.BrightMagenta:
+                    return "105;1m";
+                case Ansi16Colors.BrightCyan:
+                    return "106;1m";
+                case Ansi16Colors.BrightWhite:
+                    return "107;1m";
+
+                case Ansi16Colors.Default:
+                    return "49m";
+                case Ansi16Colors.Reset:
+                    return "0m";
 
                 default:
                     throw new ArgumentOutOfRangeException(nameof(ansi16Colors), ansi16Colors, null);

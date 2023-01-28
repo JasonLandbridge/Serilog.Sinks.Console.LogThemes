@@ -51,6 +51,31 @@ namespace Serilog.Sinks.Console.LogThemes
             return new T().ToStyleDictionary();
         }
 
+        internal static Dictionary<string, ConsoleTheme> AllThemeDictionary()
+        {
+            string ToFullName(string methodName)
+            {
+                return $"{nameof(LogThemes)}.{methodName}";
+            }
+
+            return new Dictionary<string, ConsoleTheme>()
+            {
+                // System Console Themes
+                { ToFullName(nameof(SystemLiterate)), SystemLiterate },
+                { ToFullName(nameof(SystemGrayscale)), SystemGrayscale },
+                { ToFullName(nameof(SystemColored)), SystemColored },
+
+                // Ansi Themes
+                { ToFullName(nameof(Literate)), Literate },
+                { ToFullName(nameof(Grayscale)), Grayscale },
+                { ToFullName(nameof(Code)), Code },
+                { ToFullName(nameof(Sixteen)), Sixteen },
+
+                // Original Themes
+                { ToFullName(nameof(SixteenNonBright)), SixteenNonBright },
+            };
+        }
+
         #endregion
     }
 }

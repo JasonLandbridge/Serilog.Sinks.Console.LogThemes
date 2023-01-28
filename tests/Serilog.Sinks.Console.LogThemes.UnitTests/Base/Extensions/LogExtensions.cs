@@ -12,7 +12,7 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
             this ILogger logInstance,
             LogEventLevel logLevel,
             string messageTemplate,
-            Exception exception = default,
+            Exception? exception = default,
             string className = default!,
             string memberName = default!,
             int sourceLineNumber = default!,

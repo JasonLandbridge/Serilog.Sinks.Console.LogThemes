@@ -52,7 +52,7 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
             {
                 using var logger = Create(theme);
                 var logEvent = logger.ToLogEvent(logEventLevel,
-                    "This is a {LogEventLevel} log message with a json object: {Position}, a number {Count}, a bool: {Boolean}, a DateTime: {DateTime}, a Guid: {Guid}",
+                    "This is a {LogEventLevel} log message with a json object: {Position}",
                     null,
                     "TestClass",
                     "TestMethod",
@@ -65,7 +65,23 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
                     true,
                     DateTime.Now,
                     Guid.NewGuid());
+
+                var logEvent2 = logger.ToLogEvent(logEventLevel,
+                    "A number {Count}, a bool: {Boolean}, a DateTime: {DateTime}, a Guid: {Guid}",
+                    null,
+                    "TestClass",
+                    "TestMethod",
+                    666,
+                    // template properties
+                    9999,
+                    true,
+                    DateTime.Now,
+                    Guid.NewGuid());
+
                 logger.Write(logEvent);
+                logger.Write(logEvent2);
+
+
                 await Task.Delay(printDelay);
             }
         }

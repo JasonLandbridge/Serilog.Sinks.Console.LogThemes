@@ -4,24 +4,20 @@ An extension for the great [Serilog Sinks Console](https://github.com/serilog/se
 
 - More themes, including the ones from the [Serilog Sinks Console](https://github.com/serilog/serilog-sinks-console#themes) which are a 1 to 1 replica, but written in Fluent styling!
 - Complete fluent styling of themes with 16-color, 256-color and [Truecolor](https://en.wikipedia.org/wiki/Color_depth#True_color_.2824-bit.29) (24-bit RGB) support!
-- All themes are fully extendable and can be overwritten on a per property base.
-- Easy demo functionality to quickly test how every theme looks in your IDE
+- All themes are fully extendable and can be overwritten on a per property base!
+- Easy demo functionality to quickly test how every theme looks in your IDE!
+- This project only has one dependency and is fully compatible with [Serilog Sinks Console](https://github.com/serilog/serilog-sinks-console)!
 
 # Getting started
 
-To use `Serilog.Sinks.Console.LogThemes`, first install the NuGet package [Serilog Sinks Console](https://github.com/serilog/serilog-sinks-console):
-
-```cli
-dotnet add package Serilog.Sinks.Console
-```
-
-and then
-
+To use `Serilog.Sinks.Console.LogThemes`:
 ```
 dotnet add package Serilog.Sinks.Console.LogThemes
 ```
 
-Then enable the sink using `WriteTo.Console()`:
+Note: `Serilog.Sinks.Console.LogThemes` already has a dependency on `Serilog.Sinks.Console.LogThemes`, so it's not necessary to install both.
+
+Then enable the sink using `WriteTo.Console()` and select a theme from `LogThemes`:
 
 ```csharp
 

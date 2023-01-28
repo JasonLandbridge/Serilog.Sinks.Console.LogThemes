@@ -53,6 +53,11 @@ namespace Serilog.Sinks.Console.LogThemes.Demo
             }
         }
 
+        public static async Task TasteTheRainbow()
+        {
+                // TODO add rainbow here
+        }
+
         public static async Task TestTheme(
             ConsoleTheme theme,
             string outputTemplate = "",

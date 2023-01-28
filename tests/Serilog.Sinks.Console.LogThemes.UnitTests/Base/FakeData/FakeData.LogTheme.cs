@@ -7,7 +7,7 @@ using Serilog.Sinks.SystemConsole.Themes;
 
 namespace Serilog.Sinks.Console.LogThemes.UnitTests
 {
-    public static partial class FakeData
+    public static class FakeData
     {
         public static Faker<AnsiConsoleTheme> GetFakeTheme(int seed = 0)
         {

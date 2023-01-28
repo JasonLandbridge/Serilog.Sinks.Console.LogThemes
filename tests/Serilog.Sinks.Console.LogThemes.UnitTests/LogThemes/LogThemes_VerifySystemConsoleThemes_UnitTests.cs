@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Drawing;
 using Shouldly;
 using Xunit;
 using Xunit.Abstractions;
@@ -20,7 +18,7 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
         public void VerifyOriginalThemeSystemColoredIsTheExactSameAsNewThemeSystemColored_WhenUsingFluentStyling()
         {
             var dict = TestAnsiConsoleThemes.SystemColored;
-            var newDict = ThemeDefinitions.SystemColored;
+            var newDict = LogThemes.SystemStyles<ColoredSystemThemeTemplate>();
 
             foreach (var originalStyle in dict)
             {
@@ -35,7 +33,7 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
         public void VerifyOriginalThemeSystemLiterateIsTheExactSameAsNewThemeSystemLiterate_WhenUsingFluentStyling()
         {
             var originalDict = TestAnsiConsoleThemes.SystemLiterate;
-            var newDict = ThemeDefinitions.SystemLiterate;
+            var newDict = LogThemes.SystemStyles<LiterateSystemThemeTemplate>();
 
             foreach (var originalStyle in originalDict)
             {
@@ -50,7 +48,7 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
         public void VerifyOriginalThemeSystemGrayscaleIsTheExactSameAsNewThemeSystemGrayscale_WhenUsingFluentStyling()
         {
             var originalDict = TestAnsiConsoleThemes.SystemGrayscale;
-            var newDict = ThemeDefinitions.SystemGrayscale;
+            var newDict = LogThemes.SystemStyles<GrayscaleSystemThemeTemplate>();
 
             foreach (var originalStyle in originalDict)
             {

@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Drawing;
 using Shouldly;
 using Xunit;
 using Xunit.Abstractions;
@@ -20,7 +18,7 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
         public void VerifyOriginalThemeCodeIsTheExactSameAsNewThemeCode_WhenUsingFluentStyling()
         {
             var dict = TestAnsiConsoleThemes.Code;
-            var newDict = ThemeDefinitions.Code;
+            var newDict = LogThemes.AnsiStyles<CodeAnsiThemeTemplate>();
 
             foreach (var originalStyle in dict)
             {
@@ -35,7 +33,7 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
         public void VerifyOriginalThemeLiterateIsTheExactSameAsNewThemeLiterate_WhenUsingFluentStyling()
         {
             var originalDict = TestAnsiConsoleThemes.Literate;
-            var newDict = ThemeDefinitions.Literate;
+            var newDict = LogThemes.AnsiStyles<LiterateAnsiThemeTemplate>();
 
             foreach (var originalStyle in originalDict)
             {
@@ -50,7 +48,7 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
         public void VerifyOriginalThemeGrayscaleIsTheExactSameAsNewThemeGrayscale_WhenUsingFluentStyling()
         {
             var originalDict = TestAnsiConsoleThemes.Grayscale;
-            var newDict = ThemeDefinitions.Grayscale;
+            var newDict = LogThemes.AnsiStyles<GrayscaleAnsiThemeTemplate>();
 
             foreach (var originalStyle in originalDict)
             {
@@ -65,7 +63,7 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
         public void VerifyOriginalThemeSixteenIsTheExactSameAsNewThemeSixteen_WhenUsingFluentStyling()
         {
             var originalDict = TestAnsiConsoleThemes.Sixteen;
-            var newDict = ThemeDefinitions.Sixteen;
+            var newDict = LogThemes.AnsiStyles<SixteenAnsiThemeTemplate>();
 
             foreach (var originalStyle in originalDict)
             {

@@ -5,7 +5,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		README.md = README.md
 		LICENSE = LICENSE
 		.gitignore = .gitignore
-		.github\workflows\ci.yml = .github\workflows\ci.yml
+		.github\workflows\publish.yml = .github\workflows\publish.yml
+		.github\workflows\pull-request.yml = .github\workflows\pull-request.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serilog.Sinks.Console.LogThemes", "src\Serilog.Sinks.Console.LogThemes\Serilog.Sinks.Console.LogThemes.csproj", "{7D558B83-4391-4826-A7C9-FD82D8E26BA3}"

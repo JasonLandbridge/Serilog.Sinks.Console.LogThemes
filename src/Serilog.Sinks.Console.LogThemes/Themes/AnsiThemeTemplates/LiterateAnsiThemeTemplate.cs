@@ -1,5 +1,3 @@
-using Serilog.Sinks.SystemConsole.Themes;
-
 namespace Serilog.Sinks.Console.LogThemes
 {
     public class LiterateAnsiThemeTemplate : AnsiBaseTheme

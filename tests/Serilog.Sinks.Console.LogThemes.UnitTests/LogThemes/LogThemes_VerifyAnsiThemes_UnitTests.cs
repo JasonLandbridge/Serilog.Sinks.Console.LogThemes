@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Drawing;
 using Shouldly;
 using Xunit;
 using Xunit.Abstractions;

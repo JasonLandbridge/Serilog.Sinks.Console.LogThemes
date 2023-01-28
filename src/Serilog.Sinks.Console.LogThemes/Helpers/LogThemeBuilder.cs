@@ -20,21 +20,21 @@ namespace Serilog.Sinks.Console.LogThemes
             if (foreground != null)
             {
                 // Font color
-                builder.Append(Esc + foreground.ToAnsiString(ColorLayerEnum.ForegroundColor) + "m");
+                builder.Append(Esc + foreground.ToForegroundAnsiString() + "m");
             }
 
             if (background != null)
             {
                 // Font background color
-                builder.Append(Esc + background.ToAnsiString(ColorLayerEnum.BackgroundColor) + "m");
+                builder.Append(Esc + background.ToBackgroundAnsiString() + "m");
             }
 
             return builder.ToString();
         }
 
         internal static string ToTheme(
-            Ansi16Colors? foreground,
-            Ansi16Colors? background,
+            Color16? foreground,
+            Color16? background,
             FormatTypeEnum formatType = FormatTypeEnum.None,
             bool bold = false)
         {

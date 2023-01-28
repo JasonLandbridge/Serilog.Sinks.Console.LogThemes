@@ -22,156 +22,161 @@ namespace Serilog.Sinks.Console.LogThemes
             };
         }
 
-        public static string ToForegroundAnsiString(this Ansi16Colors ansi16Colors)
+        public static string ToForegroundAnsiString(this Color16 color16)
         {
-            switch (ansi16Colors)
+            switch (color16)
             {
-                case Ansi16Colors.Black:
+                case Color16.Black:
                     return "30m";
-                case Ansi16Colors.Red:
+                case Color16.Red:
                     return "31m";
-                case Ansi16Colors.Green:
+                case Color16.Green:
                     return "32m";
-                case Ansi16Colors.Yellow:
+                case Color16.Yellow:
                     return "33m";
-                case Ansi16Colors.Blue:
+                case Color16.Blue:
                     return "34m";
-                case Ansi16Colors.Magenta:
+                case Color16.Magenta:
                     return "35m";
-                case Ansi16Colors.Cyan:
+                case Color16.Cyan:
                     return "36m";
-                case Ansi16Colors.White:
+                case Color16.White:
                     return "37m";
 
-                case Ansi16Colors.BlackBold:
+                case Color16.BlackBold:
                     return "30;1m";
-                case Ansi16Colors.RedBold:
+                case Color16.RedBold:
                     return "31;1m";
-                case Ansi16Colors.GreenBold:
+                case Color16.GreenBold:
                     return "32;1m";
-                case Ansi16Colors.YellowBold:
+                case Color16.YellowBold:
                     return "33;1m";
-                case Ansi16Colors.BlueBold:
+                case Color16.BlueBold:
                     return "34;1m";
-                case Ansi16Colors.MagentaBold:
+                case Color16.MagentaBold:
                     return "35;1m";
-                case Ansi16Colors.CyanBold:
+                case Color16.CyanBold:
                     return "36;1m";
-                case Ansi16Colors.WhiteBold:
+                case Color16.WhiteBold:
                     return "37;1m";
 
-                case Ansi16Colors.BrightBlack:
+                case Color16.BrightBlack:
                     return "90;1m";
-                case Ansi16Colors.BrightRed:
+                case Color16.BrightRed:
                     return "91;1m";
-                case Ansi16Colors.BrightGreen:
+                case Color16.BrightGreen:
                     return "92;1m";
-                case Ansi16Colors.BrightYellow:
+                case Color16.BrightYellow:
                     return "93;1m";
-                case Ansi16Colors.BrightBlue:
+                case Color16.BrightBlue:
                     return "94;1m";
-                case Ansi16Colors.BrightMagenta:
+                case Color16.BrightMagenta:
                     return "95;1m";
-                case Ansi16Colors.BrightCyan:
+                case Color16.BrightCyan:
                     return "96;1m";
-                case Ansi16Colors.BrightWhite:
+                case Color16.BrightWhite:
                     return "97;1m";
 
-                case Ansi16Colors.Default:
+                case Color16.Default:
                     return "39m";
-                case Ansi16Colors.Reset:
+                case Color16.Reset:
                     return "0m";
 
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(ansi16Colors), ansi16Colors, null);
+                    throw new ArgumentOutOfRangeException(nameof(color16), color16, null);
             }
         }
 
-        public static string ToBackgroundAnsiString(this Ansi16Colors ansi16Colors)
+        public static string ToBackgroundAnsiString(this Color16 color16)
         {
-            switch (ansi16Colors)
+            switch (color16)
             {
-                case Ansi16Colors.Black:
+                case Color16.Black:
                     return "40m";
-                case Ansi16Colors.Red:
+                case Color16.Red:
                     return "41m";
-                case Ansi16Colors.Green:
+                case Color16.Green:
                     return "42m";
-                case Ansi16Colors.Yellow:
+                case Color16.Yellow:
                     return "43m";
-                case Ansi16Colors.Blue:
+                case Color16.Blue:
                     return "44m";
-                case Ansi16Colors.Magenta:
+                case Color16.Magenta:
                     return "45m";
-                case Ansi16Colors.Cyan:
+                case Color16.Cyan:
                     return "46m";
-                case Ansi16Colors.White:
+                case Color16.White:
                     return "47m";
 
-                case Ansi16Colors.BlackBold:
+                case Color16.BlackBold:
                     return "30;1m";
-                case Ansi16Colors.RedBold:
+                case Color16.RedBold:
                     return "31;1m";
-                case Ansi16Colors.GreenBold:
+                case Color16.GreenBold:
                     return "32;1m";
-                case Ansi16Colors.YellowBold:
+                case Color16.YellowBold:
                     return "33;1m";
-                case Ansi16Colors.BlueBold:
+                case Color16.BlueBold:
                     return "34;1m";
-                case Ansi16Colors.MagentaBold:
+                case Color16.MagentaBold:
                     return "35;1m";
-                case Ansi16Colors.CyanBold:
+                case Color16.CyanBold:
                     return "36;1m";
-                case Ansi16Colors.WhiteBold:
+                case Color16.WhiteBold:
                     return "37;1m";
 
-                case Ansi16Colors.BrightBlack:
+                case Color16.BrightBlack:
                     return "100;1m";
-                case Ansi16Colors.BrightRed:
+                case Color16.BrightRed:
                     return "101;1m";
-                case Ansi16Colors.BrightGreen:
+                case Color16.BrightGreen:
                     return "102;1m";
-                case Ansi16Colors.BrightYellow:
+                case Color16.BrightYellow:
                     return "103;1m";
-                case Ansi16Colors.BrightBlue:
+                case Color16.BrightBlue:
                     return "104;1m";
-                case Ansi16Colors.BrightMagenta:
+                case Color16.BrightMagenta:
                     return "105;1m";
-                case Ansi16Colors.BrightCyan:
+                case Color16.BrightCyan:
                     return "106;1m";
-                case Ansi16Colors.BrightWhite:
+                case Color16.BrightWhite:
                     return "107;1m";
 
-                case Ansi16Colors.Default:
+                case Color16.Default:
                     return "49m";
-                case Ansi16Colors.Reset:
+                case Color16.Reset:
                     return "0m";
 
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(ansi16Colors), ansi16Colors, null);
+                    throw new ArgumentOutOfRangeException(nameof(color16), color16, null);
             }
         }
 
-        public static string ToAnsiString(this Color? color, ColorLayerEnum colorLayerEnum)
+
+        public static string ToForegroundAnsiString(this Color? color)
         {
             if (color is null)
                 return "";
 
-            var colorString = "";
+            // Is 255 color?
+            if (color.Value.R == color.Value.G && color.Value.R == color.Value.B)
+            {
+                return $"38;5;0{color.Value.R}";
+            }
+            return $"38;5;0{color.Value.R};0{color.Value.G};0{color.Value.B}";
+        }
 
-            // TODO Colorlayer enum can most likely be deleted
-            if (colorLayerEnum == ColorLayerEnum.ForegroundColor)
-                colorString += "38;";
-
-            if (colorLayerEnum == ColorLayerEnum.BackgroundColor)
-                colorString += "48;";
+        public static string ToBackgroundAnsiString(this Color? color)
+        {
+            if (color is null)
+                return "";
 
             // Is 255 color?
             if (color.Value.R == color.Value.G && color.Value.R == color.Value.B)
             {
-                return colorString + $"5;0{color.Value.R}";
+                return $"48;5;0{color.Value.R}";
             }
-            return colorString + $"5;0{color.Value.R};0{color.Value.G};0{color.Value.B}";
+            return $"48;5;0{color.Value.R};0{color.Value.G};0{color.Value.B}";
         }
     }
 }

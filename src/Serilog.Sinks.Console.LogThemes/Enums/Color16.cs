@@ -1,6 +1,6 @@
 namespace Serilog.Sinks.Console.LogThemes
 {
-    public enum Ansi16Colors
+    public enum Color16
     {
         Reset = 0,
 

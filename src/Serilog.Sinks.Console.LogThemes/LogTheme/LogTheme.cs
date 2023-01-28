@@ -24,7 +24,7 @@ namespace Serilog.Sinks.Console.LogThemes
             return string.Empty.Foreground(foreGroundColor);
         }
 
-        public static string Foreground(Ansi16Colors foreGroundColor, bool bold = false)
+        public static string Foreground(Color16 foreGroundColor, bool bold = false)
         {
             return string.Empty.Foreground(foreGroundColor, bold);
         }
@@ -43,7 +43,7 @@ namespace Serilog.Sinks.Console.LogThemes
             return string.Empty.Background(backGroundColor);
         }
 
-        public static string Background(Ansi16Colors backGroundColor)
+        public static string Background(Color16 backGroundColor)
         {
             return string.Empty.Background(backGroundColor);
         }
@@ -75,7 +75,7 @@ namespace Serilog.Sinks.Console.LogThemes
             return logStyle + LogThemeBuilder.ToTheme(foreGroundColor, null);
         }
 
-        public static string Foreground(this string logStyle, Ansi16Colors foreGroundColor, bool bold = false)
+        public static string Foreground(this string logStyle, Color16 foreGroundColor, bool bold = false)
         {
             return logStyle + LogThemeBuilder.ToTheme(foreGroundColor, null, bold: bold);
         }
@@ -99,7 +99,7 @@ namespace Serilog.Sinks.Console.LogThemes
             return logStyle + LogThemeBuilder.ToTheme(null, backGroundColor);
         }
 
-        public static string Background(this string logStyle, Ansi16Colors backGroundColor)
+        public static string Background(this string logStyle, Color16 backGroundColor)
         {
             return logStyle + LogThemeBuilder.ToTheme(null, backGroundColor);
         }
@@ -130,7 +130,7 @@ namespace Serilog.Sinks.Console.LogThemes
 
         #region Color16
 
-        public static string Style(Ansi16Colors foreground, Ansi16Colors background)
+        public static string Style(Color16 foreground, Color16 background)
         {
             return Foreground(foreground).Background(background);
         }

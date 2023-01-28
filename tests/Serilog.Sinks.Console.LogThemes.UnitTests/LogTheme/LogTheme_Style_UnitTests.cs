@@ -38,15 +38,15 @@ namespace Serilog.Sinks.Console.LogThemes.UnitTests
                 .Background(Color.Red)
                 .FormatType(FormatTypeEnum.BoldMode));
 
-            styleList.Add(LogTheme.Foreground(Ansi16Colors.Blue));
-            styleList.Add(LogTheme.Background(Ansi16Colors.Red));
+            styleList.Add(LogTheme.Foreground(Color16.Blue));
+            styleList.Add(LogTheme.Background(Color16.Red));
             styleList.Add(LogTheme.FormatType(FormatTypeEnum.BoldMode));
-            styleList.Add(LogTheme.Foreground(Ansi16Colors.Blue)
-                .Background(Ansi16Colors.Red));
-            styleList.Add(LogTheme.Foreground(Ansi16Colors.Blue)
+            styleList.Add(LogTheme.Foreground(Color16.Blue)
+                .Background(Color16.Red));
+            styleList.Add(LogTheme.Foreground(Color16.Blue)
                 .FormatType(FormatTypeEnum.BoldMode));
-            styleList.Add(LogTheme.Foreground(Ansi16Colors.Blue)
-                .Background(Ansi16Colors.Red)
+            styleList.Add(LogTheme.Foreground(Color16.Blue)
+                .Background(Color16.Red)
                 .FormatType(FormatTypeEnum.BoldMode));
 
             styleList.Add(LogTheme.Foreground(Color256.Blue19));

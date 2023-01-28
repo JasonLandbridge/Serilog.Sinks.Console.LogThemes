@@ -5,6 +5,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		README.md = README.md
 		LICENSE = LICENSE
 		.gitignore = .gitignore
+		.github\workflows\ci.yml = .github\workflows\ci.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serilog.Sinks.Console.LogThemes", "src\Serilog.Sinks.Console.LogThemes\Serilog.Sinks.Console.LogThemes.csproj", "{7D558B83-4391-4826-A7C9-FD82D8E26BA3}"
@@ -14,8 +15,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A6BBD065-7E5C-4B0C-9C77-A7E9BB18B815}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{335B8B53-AB26-4710-B7EA-2229FD1C84A6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample", "samples\Sample\Sample.csproj", "{EFE17583-0420-48D8-A1D0-4733E3FC228F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{F59A8BFE-BBC4-4C38-9893-E8C054FE8D8E}"
 EndProject
@@ -33,14 +32,9 @@ Global
 		{3F1D8E98-DF17-41A1-8BCC-93E17187D840}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F1D8E98-DF17-41A1-8BCC-93E17187D840}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F1D8E98-DF17-41A1-8BCC-93E17187D840}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EFE17583-0420-48D8-A1D0-4733E3FC228F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EFE17583-0420-48D8-A1D0-4733E3FC228F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EFE17583-0420-48D8-A1D0-4733E3FC228F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EFE17583-0420-48D8-A1D0-4733E3FC228F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3F1D8E98-DF17-41A1-8BCC-93E17187D840} = {A6BBD065-7E5C-4B0C-9C77-A7E9BB18B815}
 		{7D558B83-4391-4826-A7C9-FD82D8E26BA3} = {335B8B53-AB26-4710-B7EA-2229FD1C84A6}
-		{EFE17583-0420-48D8-A1D0-4733E3FC228F} = {F59A8BFE-BBC4-4C38-9893-E8C054FE8D8E}
 	EndGlobalSection
 EndGlobal

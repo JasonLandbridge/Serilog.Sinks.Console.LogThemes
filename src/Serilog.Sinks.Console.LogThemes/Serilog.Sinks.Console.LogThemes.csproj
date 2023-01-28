@@ -4,8 +4,7 @@
         <Version>0.1.0</Version>
         <LangVersion>8.0</LangVersion>
         <Nullable>enable</Nullable>
-        <TargetFrameworks>net6.0;net7.0;netstandard2.0</TargetFrameworks>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <TargetFrameworks>net5.0;net6.0;net7.0;</TargetFrameworks>
         <Authors>JasonLandbridge</Authors>
         <PackageProjectUrl>https://github.com/JasonLandbridge/Serilog.Sinks.Console.LogThemes</PackageProjectUrl>
         <RepositoryUrl>https://github.com/JasonLandbridge/Serilog.Sinks.Console.LogThemes</RepositoryUrl>
@@ -15,7 +14,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
+        <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0"/>
         <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
             <_Parameter1>Serilog.Sinks.Console.LogThemes.UnitTests</_Parameter1> <!-- The name of the project that you want the Internal class to be visible To it -->
         </AssemblyAttribute>

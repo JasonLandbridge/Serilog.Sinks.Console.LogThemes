@@ -5,6 +5,11 @@ namespace Serilog.Sinks.Console.LogThemes
 {
     internal static class ThemeExtensions
     {
+        private static int RgbColorFormat()
+        {
+            return 2;
+        }
+
         internal static string ToAnsiString(this FormatTypeEnum formatType)
         {
             return formatType switch
@@ -161,9 +166,9 @@ namespace Serilog.Sinks.Console.LogThemes
             // Is 255 color?
             if (color.Value.R == color.Value.G && color.Value.R == color.Value.B)
             {
-                return $"38;5;0{color.Value.R}";
+                return $"38;{RgbColorFormat()};0{color.Value.R}";
             }
-            return $"38;5;0{color.Value.R};0{color.Value.G};0{color.Value.B}";
+            return $"38;{RgbColorFormat()};0{color.Value.R};0{color.Value.G};0{color.Value.B}";
         }
 
         internal static string ToBackgroundAnsiString(this Color? color)
@@ -174,9 +179,9 @@ namespace Serilog.Sinks.Console.LogThemes
             // Is 255 color?
             if (color.Value.R == color.Value.G && color.Value.R == color.Value.B)
             {
-                return $"48;5;0{color.Value.R}";
+                return $"48;{RgbColorFormat()};0{color.Value.R}";
             }
-            return $"48;5;0{color.Value.R};0{color.Value.G};0{color.Value.B}";
+            return $"48;${RgbColorFormat()};0{color.Value.R};0{color.Value.G};0{color.Value.B}";
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Serilog.Sinks.Console.LogThemes
 
         #region AnsiThemes
 
+        public static AnsiConsoleTheme Empty => UseAnsiTheme<EmptyAnsiThemeTemplate>();
         public static AnsiConsoleTheme Code => UseAnsiTheme<CodeAnsiThemeTemplate>();
         public static AnsiConsoleTheme Literate => UseAnsiTheme<LiterateAnsiThemeTemplate>();
         public static AnsiConsoleTheme Grayscale => UseAnsiTheme<GrayscaleAnsiThemeTemplate>();
@@ -66,6 +67,7 @@ namespace Serilog.Sinks.Console.LogThemes
                 { ToFullName(nameof(SystemColored)), SystemColored },
 
                 // Ansi Themes
+                { ToFullName(nameof(Empty)), Empty },
                 { ToFullName(nameof(Literate)), Literate },
                 { ToFullName(nameof(Grayscale)), Grayscale },
                 { ToFullName(nameof(Code)), Code },

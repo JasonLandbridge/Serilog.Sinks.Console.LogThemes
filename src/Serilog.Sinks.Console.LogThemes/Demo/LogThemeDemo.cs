@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Serilog.Events;
+using Serilog.Sinks.Console.LogThemes.Demo.Helpers;
 using Serilog.Sinks.SystemConsole.Themes;
 
 namespace Serilog.Sinks.Console.LogThemes.Demo
@@ -37,7 +38,7 @@ namespace Serilog.Sinks.Console.LogThemes.Demo
             customConfiguration ??= new LoggerConfiguration();
 
             var defaultLogger = customConfiguration
-                .WriteTo.Console(outputTemplate: defaultTemplate)
+                .WriteTo.Console(outputTemplate: defaultTemplate, theme: LogThemes.Empty)
                 .MinimumLevel.Is(LogEventLevel.Verbose)
                 .CreateLogger();
 
@@ -53,9 +54,16 @@ namespace Serilog.Sinks.Console.LogThemes.Demo
             }
         }
 
-        public static async Task TasteTheRainbow()
+        public static async Task TasteTheRainbow(Action<LogThemeDemoConfig>? options = null)
         {
-                // TODO add rainbow here
+            var config = ThemeGenerator.FromOptions(options);
+
+            for (var i = 0; i < config.Loops; i++)
+            {
+                var theme = ThemeGenerator.GenerateTheme(options);
+
+                await TestTheme(theme, printDelay: config.DelayBetweenLogs);
+            }
         }
 
         public static async Task TestTheme(

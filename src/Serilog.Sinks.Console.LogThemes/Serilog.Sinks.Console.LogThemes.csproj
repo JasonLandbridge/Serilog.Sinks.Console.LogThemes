@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Version>0.2.0</Version>
+        <Version>0.2.1</Version>
         <LangVersion>8.0</LangVersion>
         <Nullable>enable</Nullable>
         <TargetFrameworks>net5.0;net6.0;net7.0;</TargetFrameworks>
@@ -13,11 +13,11 @@
         <PackageTags>serilog;console;terminal</PackageTags>
         <Title>Serilog.Sinks.Console.LogThemes</Title>
         <Description>An extension package for the great Serilog Sinks Console which provides the following extra features:
-- More themes, including the ones from the [Serilog Sinks Console](https://github.com/serilog/serilog-sinks-console#themes) which are a 1 to 1 replica, but written in Fluent styling!
-- Complete fluent styling of themes with 16-color, 256-color and [Truecolor](https://en.wikipedia.org/wiki/Color_depth#True_color_.2824-bit.29) (24-bit RGB) support!
+- More themes, including the ones from the Serilog Sinks Console which are a 1 to 1 replica, but written in Fluent styling!
+- Complete fluent styling of themes with 16-color, 256-color and Truecolor (24-bit RGB) support!
 - All themes are fully extendable and can be overwritten on a per property base!
 - Easy demo functionality to quickly test how every theme looks in your IDE!
-- This project only has one dependency and is fully compatible with [Serilog Sinks Console](https://github.com/serilog/serilog-sinks-console)!</Description>
+- This project only has one dependency and is fully compatible with Serilog Sinks Console!</Description>
         <PackageIcon>icon.png</PackageIcon>
     </PropertyGroup>
 

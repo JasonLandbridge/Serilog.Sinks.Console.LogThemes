@@ -59,10 +59,5 @@ namespace Serilog.Sinks.Console.LogThemes
                 [ConsoleThemeStyle.LevelFatal] = LevelFatal,
             };
         }
-
-        public AnsiConsoleTheme ToTheme()
-        {
-            return new AnsiConsoleTheme(ToStyleDictionary());
-        }
     }
 }

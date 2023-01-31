@@ -60,6 +60,21 @@ namespace Serilog.Sinks.Console.LogThemes
             return FormatType(FormatTypeEnum.BoldMode);
         }
 
+        public static string Italic()
+        {
+            return FormatType(FormatTypeEnum.ItalicMode);
+        }
+
+        public static string Underline()
+        {
+            return FormatType(FormatTypeEnum.UnderlineMode);
+        }
+
+        public static string Strikethrough()
+        {
+            return FormatType(FormatTypeEnum.Strikethrough);
+        }
+
         #endregion
 
         #endregion
@@ -115,6 +130,21 @@ namespace Serilog.Sinks.Console.LogThemes
         public static string Bold(this string logStyle)
         {
             return logStyle.FormatType(FormatTypeEnum.BoldMode);
+        }
+
+        public static string Italic(this string logStyle)
+        {
+            return logStyle.FormatType(FormatTypeEnum.ItalicMode);
+        }
+
+        public static string Underline(this string logStyle)
+        {
+            return logStyle.FormatType(FormatTypeEnum.UnderlineMode);
+        }
+
+        public static string Strikethrough(this string logStyle)
+        {
+            return logStyle.FormatType(FormatTypeEnum.Strikethrough);
         }
 
         #endregion

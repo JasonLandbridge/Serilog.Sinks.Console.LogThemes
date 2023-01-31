@@ -7,6 +7,8 @@ namespace Serilog.Sinks.Console.LogThemes
     {
         internal static string Esc => "\x1b[";
 
+        internal static int Color256Format => 5;
+
         internal static string ToTheme(Color? foreground, Color? background, FormatTypeEnum formatType = FormatTypeEnum.None)
         {
             var builder = new StringBuilder();
@@ -74,13 +76,13 @@ namespace Serilog.Sinks.Console.LogThemes
             if (foreground != null)
             {
                 // Font color
-                builder.Append(Esc + "38;5;" + ((int)foreground.Value).ToString("D4") + "m");
+                builder.Append(Esc + $"38;{Color256Format};" + ((int)foreground.Value).ToString("D4") + "m");
             }
 
             if (background != null)
             {
                 // Font background color
-                builder.Append(Esc + "48;5;" + ((int)background.Value).ToString("D4") + "m");
+                builder.Append(Esc + $"48;{Color256Format};" + ((int)background.Value).ToString("D4") + "m");
             }
 
             return builder.ToString();

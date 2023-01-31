@@ -10,6 +10,15 @@ Log.Logger = new LoggerConfiguration()
     .WriteTo.Console(theme: LogThemes.UseAnsiTheme<CustomCodeThemeTemplate>()) // <= Select theme here
     .CreateLogger();
 
-await LogThemeDemo.TestTheme(LogThemes.UseAnsiTheme<CustomCodeThemeTemplate>());
+await LogThemeDemo.TestTheme(LogThemes.Empty);
 
 await LogThemeDemo.TestAllThemes();
+
+await LogThemeDemo.TasteTheRainbow(config =>
+{
+    config.Loops = 30;
+    config.RandomForeground = true;
+    config.RandomBackground = false;
+    config.RandomFormatType = true;
+    config.UseColor256 = false;
+});

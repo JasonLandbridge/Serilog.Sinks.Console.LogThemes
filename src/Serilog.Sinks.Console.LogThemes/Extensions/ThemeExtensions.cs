@@ -181,7 +181,7 @@ namespace Serilog.Sinks.Console.LogThemes
             {
                 return $"48;{RgbColorFormat()};0{color.Value.R}";
             }
-            return $"48;${RgbColorFormat()};0{color.Value.R};0{color.Value.G};0{color.Value.B}";
+            return $"48;{RgbColorFormat()};0{color.Value.R};0{color.Value.G};0{color.Value.B}";
         }
     }
 }

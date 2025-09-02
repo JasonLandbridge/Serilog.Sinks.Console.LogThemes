@@ -1,11 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Version>0.3.0</Version>
+        <Version>0.4.0</Version>
         <LangVersion>13</LangVersion>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <TargetFrameworks>net5.0;net6.0;net7.0;net8.0;net9.0;</TargetFrameworks>
+        <TargetFrameworks>net5.0;net6.0;net7.0</TargetFrameworks>
         <Authors>JasonLandbridge</Authors>
         <PackageProjectUrl>https://github.com/JasonLandbridge/Serilog.Sinks.Console.LogThemes</PackageProjectUrl>
         <RepositoryUrl>https://github.com/JasonLandbridge/Serilog.Sinks.Console.LogThemes</RepositoryUrl>

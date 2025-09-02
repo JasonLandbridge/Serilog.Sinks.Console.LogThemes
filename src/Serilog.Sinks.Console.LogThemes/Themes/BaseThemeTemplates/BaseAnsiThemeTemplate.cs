@@ -37,27 +37,24 @@ namespace Serilog.Sinks.Console.LogThemes
 
         protected abstract string LevelFatal { get; }
 
-        public Dictionary<ConsoleThemeStyle, string> ToStyleDictionary()
+        public Dictionary<ConsoleThemeStyle, string> ToStyleDictionary() => new()
         {
-            return new Dictionary<ConsoleThemeStyle, string>
-            {
-                [ConsoleThemeStyle.Text] = Text,
-                [ConsoleThemeStyle.SecondaryText] = SecondaryText,
-                [ConsoleThemeStyle.TertiaryText] = TertiaryText,
-                [ConsoleThemeStyle.Invalid] = Invalid,
-                [ConsoleThemeStyle.Null] = Null,
-                [ConsoleThemeStyle.Name] = Name,
-                [ConsoleThemeStyle.String] = String,
-                [ConsoleThemeStyle.Number] = Number,
-                [ConsoleThemeStyle.Boolean] = Boolean,
-                [ConsoleThemeStyle.Scalar] = Scalar,
-                [ConsoleThemeStyle.LevelVerbose] = LevelVerbose,
-                [ConsoleThemeStyle.LevelDebug] = LevelDebug,
-                [ConsoleThemeStyle.LevelInformation] = LevelInformation,
-                [ConsoleThemeStyle.LevelWarning] = LevelWarning,
-                [ConsoleThemeStyle.LevelError] = LevelError,
-                [ConsoleThemeStyle.LevelFatal] = LevelFatal,
-            };
-        }
+            [ConsoleThemeStyle.Text] = Text,
+            [ConsoleThemeStyle.SecondaryText] = SecondaryText,
+            [ConsoleThemeStyle.TertiaryText] = TertiaryText,
+            [ConsoleThemeStyle.Invalid] = Invalid,
+            [ConsoleThemeStyle.Null] = Null,
+            [ConsoleThemeStyle.Name] = Name,
+            [ConsoleThemeStyle.String] = String,
+            [ConsoleThemeStyle.Number] = Number,
+            [ConsoleThemeStyle.Boolean] = Boolean,
+            [ConsoleThemeStyle.Scalar] = Scalar,
+            [ConsoleThemeStyle.LevelVerbose] = LevelVerbose,
+            [ConsoleThemeStyle.LevelDebug] = LevelDebug,
+            [ConsoleThemeStyle.LevelInformation] = LevelInformation,
+            [ConsoleThemeStyle.LevelWarning] = LevelWarning,
+            [ConsoleThemeStyle.LevelError] = LevelError,
+            [ConsoleThemeStyle.LevelFatal] = LevelFatal,
+        };
     }
 }
